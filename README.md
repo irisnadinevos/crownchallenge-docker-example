@@ -45,7 +45,7 @@ Next, we will execute the example Python script:
 docker exec [CONTAINER-ID] python /crown_example/run.py
 ```
 
-Since this script is quite small, it doesn’t take long to finish. Next we copy the output from the container to our local machine:
+Then we copy the output from the container to our local machine:
 
 ```
 docker cp [CONTAINER-ID]:/output [RESULT-LOCATION]
