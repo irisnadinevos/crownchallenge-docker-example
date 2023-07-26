@@ -16,9 +16,11 @@ Our Dockerfile looks like this:
 ```
 FROM python:3.9
 
-RUN pip install SimpleITK ADD src/crown_example
+RUN pip install SimpleITK
+ADD src/crown_example
 ```
 
+Note: The COPY, ADD and RUN statements add a new layer to your image. Try to combine commands into a single RUN statement; separate this only if it is required for readability.
 Our Python code is saved next to this Dockerfile in the folder src/run.py. With the following command, we build a Docker container from our Dockerfile and the Python source code:
 
 ```
