@@ -4,7 +4,6 @@ Spyder Editor
 
 This is a temporary script file.
 """
-
 import json
 import random
 import string
@@ -12,9 +11,8 @@ from pathlib import Path
 
 import SimpleITK as sitk
 
-project_dir = Path('__file__').parent.absolute().parent.absolute()
-input_dir = project_dir / 'input'
-output_dir = project_dir / 'output crownchallenge/TeamName1_task1'
+input_dir = Path('/input')
+output_dir = Path('/output')
 
 
 def random_classification(image):
