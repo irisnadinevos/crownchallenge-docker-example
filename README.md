@@ -17,7 +17,7 @@ Our Dockerfile looks like this:
 FROM python:3.9
 
 RUN pip install SimpleITK
-ADD src/crown_example
+ADD src /crown_example/
 ```
 
 Note: The COPY, ADD and RUN statements add a new layer to your image. Try to combine commands into a single RUN statement; separate this only if it is required for readability.
@@ -31,7 +31,7 @@ Note: the . at the end specifies that everything is in the current folder. Hence
 Once your container is ready, we can run it with the following command:
 
 ```
-docker run -dit --network none -v [TEST-ORIG]:/input/orig:ro -v [TEST-PRE]:/input/pre:ro -v /output crownchallenge/[TEAM-NAME]_task1
+docker run -dit --network none -v [TEST-INPUT]:/input:ro -v /output crownchallenge/[TEAM-NAME]_task1
 ```
 
 The -v options map the input folder into the container at /input, read-only. The last -v creates an output directory.
